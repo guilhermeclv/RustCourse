@@ -8,7 +8,8 @@ fn main() {
     println!("{} {}", text1, text2);
     let mut name = String::new();
     println!("Digite seu nome: ");
-    io::stdin().read_line(&mut name); //iremos resolver isso mais a frente
-    println!("Olá, {}", name);
+    let entrada = io::stdin();
+    entrada.read_line(&mut name); //iremos resolver isso mais a frente
+    println!("Olá, {}", name); 
     
 }
