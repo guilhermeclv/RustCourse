@@ -1,10 +1,31 @@
+use unicode_segmentation::UnicodeSegmentation;
+
+fn using_graphemes(){
+    
+    let minha_string = String::from("Olá, coração! 🌍🚀 é um अभिवादन");
+
+    let graphemes: Vec<&str> = minha_string.graphemes(true).collect(); // it is when you use text with special unicodes bigger than 4 bytes
+    println!("Graphemes: {:?}", graphemes); //use &str as type of vector because it is a slice of string
+
+    let chars: Vec<char> = minha_string.chars().collect(); // every try use this way,rarely you will need to use graphemes (because it is more efficient)
+    println!("Chars:     {:?}", chars);
+
+    for s in graphemes{
+        println!("{} - {:?}",s, s.bytes().collect::<Vec<u8>>());
+    }
+}
+
 fn main(){
     //rust use utf8 aS default encoding and unicode, because it is necessary use 4 bytes (32 bits) for a simple char
     //Strings slice
     let _str_text = "my name"; //it is a slice of a string (immutable), this value ("my name") is allocated in static memory and str_text is a pointer to this value this is allocated in stack memory
     
     //String OR HEAP STRING
-    let _string_00 = String::new(); 
+    let mut _string_00 = String::new(); 
+    _string_00 = "pedro ".to_string();
+    _string_00 += "samarino";
+    _string_00.push_str(" braga");
+    println!("string_00 = {}",_string_00);
     let mut string_text = String::from("my name"); //it is a string (mutable), this value ("my name") is allocated in heap memory
     string_text.push_str(" is joão pedro "); // you can add a string in a string
     string_text.push_str("samarino ");
@@ -34,5 +55,6 @@ fn main(){
     let re = Regex::new(r"(\w{2})").unwrap();
     let replace_string_regex = re.replace_all(&string_text_2, r"($1)");
     println!("string_text_2 replace with regex = {replace_string_regex}");
+    using_graphemes();
 
 }

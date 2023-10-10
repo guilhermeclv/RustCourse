@@ -2,6 +2,9 @@ use std::mem;
 fn main(){
     // rust use utf8 as default encoding and unicode, because it is necessary use 4 bytes (32 bits) for a simple char
     // CHAR
+    let _simple_var:i32; //declare defore use
+    _simple_var = 10; //assign firt time (value not mutable)
+    //_simple_var = 20; //assign second time not work (value not mutable)
     let simple_char: char = 'I';
     let char_unicode_heart: char = '\u{2764}';
     let char_unicode_heart_2: char = '\u{1F496}';

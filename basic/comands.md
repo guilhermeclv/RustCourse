@@ -23,8 +23,11 @@
 - cargo uninstall : uninstall a binary
 
 <h2> Types of memory in rust:</h2>
+
  - static: is a memory that is allocated in the compile time and is available for all the program
+
  - stack: is a memory that is allocated in the runtime and is available only in the scope that is allocated the alocated space in the stack is predefined in copile time and is not possible to change
+
  - heap: is a memory that is allocated in the runtime and is available for all the program
 
 
