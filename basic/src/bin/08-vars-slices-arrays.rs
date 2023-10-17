@@ -5,6 +5,7 @@ fn main(){
     let mut my_first_array = ["my","name","is","joão pedro"]; // is not possible mix typing in a array it is possible in (only in tuple)
     let mut other_sintaxe_array = ["";5]; // equivalent to [1,1,1,1,1]
     other_sintaxe_array[0] = "my name";
+    let ddd = [1..3];
     //using get method
     println!("my_first_array = [{}] [{}] [{}] [{}]",my_first_array.get(999).unwrap_or(&"erro_index"),my_first_array.get(1).unwrap(),my_first_array.get(2).unwrap(),my_first_array.get(3).unwrap());
     println!("common array = [{}] [{}] [{}] [{}]",my_first_array[0],my_first_array[1],my_first_array[2],my_first_array[3]);
