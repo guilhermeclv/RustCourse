@@ -8,5 +8,5 @@ fn main() {
     let r2 = &mut s;
     r2.push_str("!");
     
-    println!("{}",r1);
+    //println!("{}",r1);
 }

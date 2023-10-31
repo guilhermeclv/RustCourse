@@ -3,9 +3,9 @@
 // Don't remove a whole line !
 fn main() {
     let mut s = String::from("hello");
-
-    let r1 = &mut s;
-    let r2 = &mut s;
+    //&mut is possible has only one reference
+    let r1 = &s;
+    let r2 = &s;
 
     println!("{}, {}", r1, r2);
 
