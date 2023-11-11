@@ -1,6 +1,6 @@
 
 // Fill the blanks to make the code work
-#[__]
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -15,5 +15,5 @@ fn main() {
 
     dbg!(&rect1); // Print debug info to stderr
 
-    println!(__, rect1); // Print debug info to stdout
+    println!("{:?} ", rect1); // Print debug info to stdout
 }

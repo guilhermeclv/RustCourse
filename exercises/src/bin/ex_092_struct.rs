@@ -1,28 +1,28 @@
-// fn main() {
-//     #[derive(Debug)]
-//     struct Person {
-//         name: String,
-//         age: Box<u8>,
-//     }
+fn xyz() {
+    #[derive(Debug)]
+    struct Person {
+        name: String,
+        age: Box<u8>,
+    }
 
-//     let person = Person {
-//         name: String::from("Alice"),
-//         age: Box::new(20),
-//     };
+    let person = Person {
+        name: String::from("Alice"),
+        age: Box::new(20),
+    };
 
-//     // `name` is moved out of person, but `age` is referenced
-//     let Person { name, ref age } = person;
+    // `name` is moved out of person, but `age` is referenced
+    let Person { name, ref age } = person;
 
-//     println!("The person's age is {}", age);
+    println!("The person's age is {}", age);
 
-//     println!("The person's name is {}", name);
+    println!("The person's name is {}", name);
 
-//     // Error! borrow of partially moved value: `person` partial move occurs
-//     //println!("The person struct is {:?}", person);
+    // Error! borrow of partially moved value: `person` partial move occurs
+    //println!("The person struct is {:?}", person);
 
-//     // `person` cannot be used but `person.age` can be used as it is not moved
-//     println!("The person's age from person struct is {}", person.age);
-// }
+    // `person` cannot be used but `person.age` can be used as it is not moved
+    println!("The person's age from person struct is {}", person.age);
+}
 // Fix errors to make it work
 #[derive(Debug)]
 struct File {
@@ -35,7 +35,7 @@ fn main() {
         data: "Rust By Practice".to_string()
     };
 
-    let _name = f.name;
+    let _name = &f.name;
 
     // ONLY modify this line
     println!("{}, {}, {:?}",f.name, f.data, f);

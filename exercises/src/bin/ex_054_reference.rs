@@ -2,7 +2,7 @@
 fn main() {
     let mut s = String::from("hello, ");
 
-    let r1 = &mut s;
+    let r1 = &mut s.clone();
     let r2 = &mut s;
 
    r1.push_str("string");

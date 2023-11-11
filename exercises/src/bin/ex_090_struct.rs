@@ -1,4 +1,5 @@
 // Fill the blank to make the code work
+#[derive(Debug)]
 struct User {
     active: bool,
     username: String,
@@ -14,13 +15,13 @@ fn main() {
     };
 
     let u2 = set_email(u1);
-
+    println!("{:?} ", u2);
     println!("Success!");
 } 
 
 fn set_email(u: User) -> User {
     User {
         email: String::from("contact@im.dev"),
-        __
+        ..u
     }
 }

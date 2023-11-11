@@ -9,7 +9,8 @@ fn main() {
     let p = Person {
         name: String::from("sunface"),
         age,
+        hobby: String::from("programming")
     };
-
+    assert_eq!(p.name, "sunface");
     println!("Success!");
 } 

@@ -1,7 +1,12 @@
 // Fix error with at least two solutions
+
+// fn main() {
+//     let s = "hello, world";
+//     greetings(s.to_string());
+// }
 fn main() {
-    let s = "hello, world";
-    greetings(s)
+    let s = String::from("hello, world");
+    greetings(s);
 }
 
 fn greetings(s: String) {

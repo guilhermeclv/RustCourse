@@ -6,11 +6,15 @@ struct Person {
 }
 fn main() {
     println!("Success!");
+    let xyz = build_person("joao".to_string(), 2);
+
 } 
 
 fn build_person(name: String, age: u8) -> Person {
-    Person {
+    let xyz = Person {
         age,
-        __
-    }
+        name
+    };
+    println!("{} is {} years old.", xyz.name, xyz.age);
+    xyz
 }
