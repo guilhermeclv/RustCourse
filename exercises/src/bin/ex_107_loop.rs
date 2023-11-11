@@ -13,7 +13,7 @@ fn main() {
             println!("three");
 
             // Skip the rest of this iteration
-            __;
+            continue;
         }
 
         println!("{}", count);
@@ -21,7 +21,7 @@ fn main() {
         if count == 5 {
             println!("OK, that's enough");
 
-            __;
+            break;
         }
     }
 

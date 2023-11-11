@@ -11,7 +11,8 @@ fn main() {
             count += 2;
         }
 
-        count += 5;
+        count += 5; 
+        // this point, count is 25
 
         'inner2: loop {
             if count >= 30 {
@@ -24,7 +25,7 @@ fn main() {
         }
     }
 
-    assert!(count == __);
+    assert!(count == 30);
 
     println!("Success!");
 }

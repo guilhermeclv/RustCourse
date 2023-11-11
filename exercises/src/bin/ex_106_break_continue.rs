@@ -4,10 +4,9 @@ fn main() {
     for i in 0..=100 {
        if n != 66 {
            n+=1;
-           __;
+           continue;
        }
-       
-       __
+       break;
     }
 
     assert_eq!(n, 66);

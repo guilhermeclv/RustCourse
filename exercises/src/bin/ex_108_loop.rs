@@ -2,11 +2,11 @@
 fn main() {
     let mut counter = 0;
 
-    let result = loop {
+    let result= loop {
         counter += 1;
 
         if counter == 10 {
-            __;
+         break counter * 2;
         }
     };
 
