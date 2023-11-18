@@ -4,6 +4,7 @@
 fn main() {
     let age = Some(30);
     if let Some(age) = age { // Create a new variable with the same name as previous `age`
+       let age = Some(30);
        assert_eq!(age, Some(30));
     } // The new variable `age` goes out of scope here
     

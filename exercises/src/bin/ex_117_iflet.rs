@@ -16,4 +16,9 @@ fn main() {
     } else {
         println!("match others")
     }
+    match a {
+        Foo::Bar => println!("Bar"),
+        Foo::Qux(i)=>println!("qux:{i}"),
+        Foo::Baz => println!("Baz"),
+    };
 }

@@ -9,7 +9,7 @@ fn main() {
 
     let v = vec![MyEnum::Foo,MyEnum::Bar,MyEnum::Foo];
     for e in v {
-        if e == MyEnum::Foo { // Fix the error by changing only this line
+        if matches!(e,MyEnum::Foo) { // Fix the error by changing only this line  e == MyEnum::Foo
             count += 1;
         }
     }

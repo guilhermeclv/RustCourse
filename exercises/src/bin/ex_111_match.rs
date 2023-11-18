@@ -6,8 +6,11 @@ fn main() {
     //
     // boolean = true => binary = 1
     // boolean = false =>  binary = 0
-    let binary = __;
-
+    //let binary = if boolean { 1 } else { 0 };
+    let binary = match boolean {
+        true => 1,
+        false => 0,
+    };
     assert_eq!(binary, 1);
 
     println!("Success!");

@@ -6,7 +6,13 @@ struct Point {
 
 fn main() {
     // Fill in the blank to let p match the second arm
-    let p = Point { x: __, y: __ };
+    let p = Point { x: 1, y: 20 };
+    let test2 = 2;
+    if let Point{x:_,y:z@(20 | 30)} = p {
+        println!("{z}")
+    }
+    let test3 = (1|64|2);
+    println!("{test3:0b}");
 
     match p {
         Point { x, y: 0 } => println!("On the x axis at {}", x),

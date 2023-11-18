@@ -1,11 +1,13 @@
 //Use | to match several values, use ..= to match an inclusive range.
-fn main() {}
+fn main() {
+    match_number(3);
+}
 fn match_number(n: i32) {
     match n {
         // Match a single value
         1 => println!("One!"),
         // Fill in the blank with `|`, DON'T use `..` or `..=`
-        __ => println!("match 2 -> 5"),
+        2..=5 => println!("match 2 -> 5"),
         // Match an inclusive range
         6..=10 => {
             println!("match 6 -> 10")

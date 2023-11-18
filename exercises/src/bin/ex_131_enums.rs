@@ -8,6 +8,14 @@ enum TrafficLightColor {
 
 // Implement TrafficLightColor with a method.
 impl TrafficLightColor {
+    fn color(&self)->String{
+       let color =  match self {
+            TrafficLightColor::Green=> "green",
+            TrafficLightColor::Yellow=> "yellow",
+            TrafficLightColor::Red=> "red"
+        };
+        return color.to_string();
+    }
     
 }
 

@@ -5,7 +5,9 @@ fn main() {
     let mut v = String::from("hello,");
     let r = &mut v;
 
-    match r {
-       &mut value => value.push_str(" world!") 
+    match &mut v {
+       value if value.len()>1 =>{ value.push_str(" world!"); println!("{}",value.len()) }
+       _=>{}
     }
+    println!("{v}");
 }
