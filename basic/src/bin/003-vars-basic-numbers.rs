@@ -29,15 +29,30 @@ fn main(){
     let my_unsigned_64bits:u64 = 3; // unsigned 64bits (8bytes) minimum value is 0 and maximum value is 18446744073709551615
     let my_unsigned_128bits:u128 = 3; // unsigned 128bits (16bytes) minimum value is 0 and maximum value is 340282366920938463463374607431768211455
 
-    // to store negative numbers we use signed vars
+    // to STORE NEGATIVE NUMBERS we use signed vars
     // rust use a pattern (two's complement) to store negative numbers, so the first bit is used to store the sign of the number
+    
     // exemple: 3 in binary is 00000011, -3 in binary is 11111101 (first invert the bits (11111100) and after sum 1 (11111101))
+    // |---------------number--------------| (32bits) 
+    // |00000000|00000000|00000000|00000011| = 3 (unsigned 32bits)
+    //                   ~                     (invert the bits)
+    // |11111111|11111111|11111111|11111100| = (~3) 
+    //                   +                     (sum 1)
+    // |00000000|00000000|00000000|00000001| = 1 
+    //                   =
+    // |11111111|11111111|11111111|11111101| = -3 (signed 32bits) (two's complement)
+
     // rebember signed vars use the (double of bits) to store the same number of unsigned vars because the first bit is used to store the sign of the number
     
     let my_signed_8bits:i8 = 3; // signed 8bits (1byte) minimum value is -128 and maximum value is 127
     println!("my_signed_8bits in decimal:{0} in binary {0:08b}",my_signed_8bits); // print the value of the vars (my_signed_8bits)
     let my_signed_8bits_negative:i8 = -3; // signed 8bits (1byte) minimum value is -128 and maximum value is 127
     println!("my_signed_8bits_negative in decimal:{0} in binary {0:08b}",my_signed_8bits_negative); // verify the two's complement
+    
+    // transform to binary AND transform in a signed integer (you can use ! to invert the bits and after sum 1 to get the two's complement)
+    let my_transformed_signed_8bits_negative:i8 = !my_signed_8bits+1; 
+    println!("my_transformed_signed_8bits_negative in decimal:{0} in binary {0:08b}",my_transformed_signed_8bits_negative); // verify the two's complement
+
     let my_signed_16bits:i16 = 3; // signed 16bits (2bytes) minimum value is -32768 and maximum value is 32767
     let my_signed_32bits:i32 = 3; // signed 32bits (4bytes) minimum value is -2147483648 and maximum value is 2147483647
     let my_signed_64bits:i64 = 3; // signed 64bits (8bytes) minimum value is -9223372036854775808 and maximum value is 9223372036854775807
