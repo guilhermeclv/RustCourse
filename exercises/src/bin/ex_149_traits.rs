@@ -4,8 +4,9 @@ use std::ops;
 struct Foo;
 struct Bar;
 
+#[derive(Debug, PartialEq)]
 struct FooBar;
-
+#[derive(Debug, PartialEq)]
 struct BarFoo;
 
 // The `std::ops::Add` trait is used to specify the functionality of `+`.
@@ -19,10 +20,11 @@ impl ops::Add<Bar> for Foo {
     }
 }
 
-impl ops::Sub<Foo> for Bar {
+
+impl ops::Sub<Bar> for Foo {
     type Output = BarFoo;
 
-    fn sub(self, _rhs: Foo) -> BarFoo {
+    fn sub(self, _rhs: Bar) -> BarFoo {
         BarFoo
     }
 }

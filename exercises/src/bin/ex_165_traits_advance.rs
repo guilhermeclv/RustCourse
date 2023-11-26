@@ -36,8 +36,29 @@ struct CSStudent {
 }
 
 // IMPLEMENT the necessary traits for CSStudent to make the code work
-impl ...
+impl Person for CSStudent {
+    fn name(&self) -> String {
+        self.name.clone()
+    }
+}
 
+impl Student for CSStudent {
+    fn university(&self) -> String {
+        self.university.clone()
+    }
+}
+
+impl Programmer for CSStudent {
+    fn fav_language(&self) -> String {
+        self.fav_language.clone()
+    }
+}
+
+impl CompSciStudent for CSStudent {
+    fn git_username(&self) -> String {
+        self.git_username.clone()
+    }
+}
 fn main() {
     let student = CSStudent {
         name: "Sunfei".to_string(),
@@ -47,5 +68,5 @@ fn main() {
     };
 
     // FILL in the blank
-    println!("{}", comp_sci_student_greeting(__));
+    println!("{}", comp_sci_student_greeting(&student));
 }

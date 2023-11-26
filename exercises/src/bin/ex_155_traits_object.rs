@@ -30,7 +30,7 @@ impl Bird for Swan {
 
 fn main() {
     // FILL in the blank.
-    let duck = __;
+    let duck = Duck;
     duck.swim();
 
     let bird = hatch_a_bird(2);
@@ -49,4 +49,10 @@ fn main() {
 }   
 
 // IMPLEMENT this function.
-fn hatch_a_bird...
+fn hatch_a_bird(e:u32)-> Box<dyn Bird>{
+    match e {
+        1 => Box::new(Swan),
+        2 => Box::new(Duck),
+        _ => panic!("Not a bird")
+    }
+}

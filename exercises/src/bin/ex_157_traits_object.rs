@@ -17,13 +17,19 @@ impl Draw for f64 {
 
 fn main() {
     let x = 1.1f64;
-    let y = 8u8;
+    let mut y = 8u8;
 
     // Draw x.
-    draw_with_box(__);
+    draw_with_box(Box::new(x));
 
     // Draw y.
     draw_with_ref(&y);
+
+    // Draw y again.
+    draw_with_mut_ref(&mut y);
+
+    // Draw x again.
+    draw_with_impl(x);
 
     println!("Success!");
 }
@@ -32,6 +38,14 @@ fn draw_with_box(x: Box<dyn Draw>) {
     x.draw();
 }
 
-fn draw_with_ref(x: __) {
+fn draw_with_ref(x: &dyn Draw) {
+    x.draw();
+}
+
+fn draw_with_mut_ref(x: &mut dyn Draw) {
+    x.draw();
+}
+
+fn draw_with_impl(x: impl Draw) {
     x.draw();
 }

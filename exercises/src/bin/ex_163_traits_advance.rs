@@ -38,6 +38,7 @@ fn main() {
     // named `get`.
     // println!("{}", form.get());
     
+    
     let username = UsernameWidget::get(&form);
     assert_eq!("rustacean".to_owned(), username);
     let age = AgeWidget::get(&form); // You can also use `<Form as AgeWidget>::get`

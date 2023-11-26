@@ -10,13 +10,13 @@ struct Inches(i32);
 impl Inches {
     fn to_centimeters(&self) -> Centimeters {
         let &Inches(inches) = self;
-
         Centimeters(inches as f64 * 2.54)
     }
 }
 
 // ADD some attributes to make the code work!
 // DON'T modify other code!
+#[derive(PartialEq, PartialOrd, Debug)]
 struct Seconds(i32);
 
 fn main() {

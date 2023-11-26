@@ -3,6 +3,12 @@ fn main() {
 }
 
 // Implement `fn sum` with trait bound in two ways.
-fn sum<T>(x: T, y: T) -> T {
+fn sum<T>(x: T, y: T) -> T 
+where T: std::ops::Add<Output = T>
+{
     x + y
 }
+
+// fn sum<T: std::ops::Add<Output = T>>(x: T, y: T) -> T {
+//     x + y
+// }

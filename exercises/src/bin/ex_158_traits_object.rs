@@ -14,10 +14,14 @@ impl Foo for String {
 }
 
 // IMPLEMENT below with generics.
-fn static_dispatch...
+fn static_dispatch<T: Foo>(x: T) {
+    println!("{}", x.method());
+}
 
 // Implement below with trait objects.
-fn dynamic_dispatch...
+fn dynamic_dispatch(x: &dyn Foo) {
+    println!("{}", x.method());
+}
 
 fn main() {
     let x = 5u8;

@@ -28,6 +28,12 @@ impl Summary for Weibo {
         format!("{} published a weibo {}", self.username, self.content)
     }
 }
+// fn summary<T: Summary>(item: &T) {
+//     println!("{}", item.summarize());
+// }
+fn summary(t: &impl Summary) {
+    let _ = t.summarize();
+}
 
 fn main() {
     let post = Post {
@@ -40,8 +46,8 @@ fn main() {
         content: "Weibo seems to be worse than Tweet".to_string(),
     };
 
-    summary(post);
-    summary(weibo);
+    summary(&post);
+    summary(&weibo);
 
     println!("{:?}", post);
     println!("{:?}", weibo);

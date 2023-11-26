@@ -1,7 +1,7 @@
 // Modify this struct to make the code work
-struct Point<T> {
+struct Point<T,K> {
     x: T,
-    y: T,
+    y: K,
 }
 
 fn main() {

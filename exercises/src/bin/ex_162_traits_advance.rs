@@ -8,7 +8,7 @@ struct Point<T> {
 
 // FILL in the blank in three ways: two of them use the default generic  parameters, the other one not.
 // Notice that the implementation uses the associated type `Output`.
-impl __ {
+impl <T> Sub for Point<T> where T: Sub<Output = T> {
     type Output = Self;
 
     fn sub(self, other: Self) -> Self::Output {

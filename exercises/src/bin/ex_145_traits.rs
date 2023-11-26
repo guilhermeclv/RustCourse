@@ -51,7 +51,6 @@ impl Animal for Sheep {
             "baaaaah!".to_string()
         }
     }
-    
     // Default trait methods can be overridden.
     fn talk(&self) {
         // For example, we can add some quiet contemplation.

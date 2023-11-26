@@ -10,10 +10,10 @@ fn main() {
             data: [1, 2, 3],
         },
         Array {
-            data: [1.0, 2.0, 3.0],
+            data: [1, 2, 3],
         },
         Array {
-            data: [1, 2]
+            data: [1, 2, 4]
         }
     ];
 

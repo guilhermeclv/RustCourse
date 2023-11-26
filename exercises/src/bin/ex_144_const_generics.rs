@@ -1,23 +1,19 @@
-//Sometimes we want to limit the size of a variable, e.g when using in embedding environments, then const expressions will fit your needs.
+// to do it run is necessary to run like a experimental feature
 #![allow(incomplete_features)]
 #![feature(generic_const_exprs)]
-
 fn check_size<T>(val: T)
-where
-    Assert<{ core::mem::size_of::<T>() < 768 }>: IsTrue,
+where Assert<{ core::mem::size_of::<T>() < 768 }>: IsTrue,
 {
     //...
 }
 
-// Fix the errors in main.
+// fix the errors in main
 fn main() {
     check_size([0u8; 767]); 
     check_size([0i32; 191]);
-    check_size(["hello你好"; __]); // Size of &str ?
-    check_size([(); __].map(|_| "hello你好".to_string()));  // Size of String?
-    check_size(['中'; __]); // Size of char ?
-
-    println!("Success!");
+    check_size(["hello你好"; 47]); // &str is a string reference, containing a pointer and string length in it, so it takes two word long, in x86-64, 1 word = 8 bytes
+    check_size([(); 31].map(|_| "hello你好".to_string()));  // String is a smart pointer struct, it has three fields: pointer, length and capacity, each takes 8 bytes
+    check_size(['中'; 191]); // A char takes 4 bytes in Rust
 }
 
 

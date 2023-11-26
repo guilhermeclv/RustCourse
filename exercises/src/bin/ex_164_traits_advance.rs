@@ -29,10 +29,9 @@ impl Human {
 fn main() {
     let person = Human;
 
-    assert_eq!(__, "This is your captain speaking.");
-    assert_eq!(__, "Up!");
-
-    assert_eq!(__, "*waving arms furiously*");
+    assert_eq!(Pilot::fly(&person), "This is your captain speaking.");
+    assert_eq!(Wizard::fly(&person), "Up!");
+    assert_eq!(person.fly(), "*waving arms furiously*");
 
     println!("Success!");
 }

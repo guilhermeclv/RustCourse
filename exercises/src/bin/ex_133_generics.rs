@@ -1,8 +1,15 @@
 
-
 // Implement the generic function below.
-fn sum
+fn sum<T>(a: T, b: T) -> T 
+where T: std::ops::Add<Output = T>
+{
+    return a + b;
+}
 
+fn _sum<T:std::ops::Add<Output = T>>(a: T, b: T) -> T 
+{
+    return a + b;
+}
 fn main() {
     assert_eq!(5, sum(2i8, 3i8));
     assert_eq!(50, sum(20, 30));

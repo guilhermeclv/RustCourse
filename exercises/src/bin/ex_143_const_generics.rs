@@ -1,6 +1,8 @@
 
 // Fill in the blanks to make it work.
-fn print_array<__>(__) {
+fn print_array<T,const N:usize>(arr: [T;N]) 
+where T: std::fmt::Debug
+{
     println!("{:?}", arr);
 }
 fn main() {
