@@ -18,7 +18,7 @@ fn main(){
     match my_tuple {
         (1,2,3) => println!("my_tuple is (1,2,3)"),
         (1,2,free_var_3) => println!("my_tuple is (1,2,{free_var_3})"),
-        (1,free_var_2,free_var_3) => println!("my_tuple is (1,{free_var_2},{free_var_3})"),
+        (1,..,free_var_3) => println!("my_tuple is (1,,{free_var_3})"),
         (free_var_1,free_var_2,free_var_3) => println!("my_tuple is ({free_var_1},{free_var_2},{free_var_3})"),
     }
 
