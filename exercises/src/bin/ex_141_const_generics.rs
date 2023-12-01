@@ -1,11 +1,21 @@
-//Const generics can also let us avoid some runtime checks
-
 /// A region of memory containing at least `N` `T`s.
 pub struct MinSlice<T, const N: usize> {
     /// The bounded region of memory. Exactly `N` `T`s.
     pub head: [T; N],
     /// Zero or more remaining `T`s after the `N` in the bounded region.
-    pub tail: [T],
+    pub tail: T,
+}
+impl <T, const N: usize> MinSlice<T, N> {
+    /// Construct a `MinSlice` from a slice of at least `N` `T`s.
+    pub fn from_slice(slice: &[T])-> MinSlice<T, N> {
+        assert!(slice.len() >= N);
+        let mut head: [T; N] = slice::from_ref(&slice[0]);
+        let mut tail: T = Default::default();
+        let (head_slice, tail_slice) = slice.split_at(N);
+        head.copy_from_slice(head_slice);
+        tail = tail_slice[0];
+        MinSlice { head, tail }
+    }
 }
 
 fn main() {
