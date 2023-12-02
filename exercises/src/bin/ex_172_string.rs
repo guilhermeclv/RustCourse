@@ -1,14 +1,14 @@
 // FILL in the blanks
 fn main() {
    let mut s = String::new();
-   __;
+   s.push_str("hello");
 
    // Some bytes, in a vector
-   let v = vec![104, 101, 108, 108, 111];
+   let v:Vec<u8> = vec![104, 101, 108, 108, 111];
 
    // Turn a byte's vector into a String
-   let s1 = __;
-   
+   let s1 = String::from_utf8(v).unwrap_or("".to_owned());
+   println!("{s1}");
    
    assert_eq!(s, s1);
 

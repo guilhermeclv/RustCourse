@@ -14,10 +14,11 @@ fn main() {
 
     // IMPLEMENT team_map2 in two ways
     // Tips: one of the approaches is to use `collect` method
-    let teams_map2...
+    //let teams_map2 = teams.iter().map(|team| (team.0, team.1)).collect::<HashMap<_, _>>();
+    //other way
+    let teams_map2 = HashMap::from(teams);
 
     assert_eq!(teams_map1, teams_map2);
 
     println!("Success!");
-}
 }

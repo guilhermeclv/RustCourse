@@ -2,6 +2,7 @@
 // Tips: `derive` is usually a good way to implement some common used traits
 use std::collections::HashMap;
 
+#[derive(Hash,PartialEq, Eq, Debug)]
 struct Viking {
     name: String,
     country: String,
@@ -19,12 +20,11 @@ impl Viking {
 
 fn main() {
     // Use a HashMap to store the vikings' health points.
-    let vikings = HashMap::from([
+    let vikings:HashMap<Viking,i32> = HashMap::from([
         (Viking::new("Einar", "Norway"), 25),
         (Viking::new("Olaf", "Denmark"), 24),
         (Viking::new("Harald", "Iceland"), 12),
     ]);
-
     // Use derived implementation to print the status of the vikings.
     for (viking, health) in &vikings {
         println!("{:?} has {} hp", viking, health);

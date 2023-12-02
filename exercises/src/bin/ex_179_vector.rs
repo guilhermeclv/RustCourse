@@ -6,7 +6,10 @@ fn main() {
     let slice1 = &v[..];
     // Out of bounds will cause a panic
     // You must use `v.len` here
-    let slice2 = &v[0..4];
+    let slice2 = &v[0..v.len()];
+    println!("slice1: {:?}", slice1);
+    println!("slice2: {:?}", slice2);
+    println!("v: {:?}", v );
     
     assert_eq!(slice1, slice2);
     
@@ -14,8 +17,8 @@ fn main() {
     // Note: slice and &Vec are different
     let vec_ref: &mut Vec<i32> = &mut v;
     (*vec_ref).push(4);
-    let slice3 = &mut v[0..3];
-    slice3.push(4);
+    let slice3 = &mut v[0..];
+    
 
     assert_eq!(slice3, &[1, 2, 3, 4]);
 

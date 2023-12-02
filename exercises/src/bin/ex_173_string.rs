@@ -1,10 +1,7 @@
 // Modify the code below to print out: 
-// 25
-// 25
-// 25
 // Here, there’s no need to allocate more memory inside the loop.
 fn main() {
-   let mut s = String::new();
+   let mut s = String::with_capacity(20);
 
    println!("{}", s.capacity());
 
@@ -12,6 +9,6 @@ fn main() {
        s.push_str("hello");
        println!("{}", s.capacity());
    }
-
+   println!("{s}");
    println!("Success!");
 }

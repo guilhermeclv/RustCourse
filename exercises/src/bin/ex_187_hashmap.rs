@@ -7,6 +7,7 @@ fn main() {
     map.insert(3, 4);
     // Indeed ,the capacity of HashMap is not 100, so we can't compare the equality here.
     assert!(map.capacity() >= 100);
+    println!("map capacity: {}", map.capacity());   
 
     // Shrinks the capacity of the map with a lower limit. It will drop
     // down no lower than the supplied limit while maintaining the internal rules
@@ -14,11 +15,13 @@ fn main() {
 
     map.shrink_to(50);
     assert!(map.capacity() >= 50);
+    println!("map capacity: {}", map.capacity());
 
     // Shrinks the capacity of the map as much as possible. It will drop
     // down as much as possible while maintaining the internal rules
     // and possibly leaving some space in accordance with the resize policy.
     map.shrink_to_fit();
     assert!(map.capacity() >= 2);
+    println!("map capacity: {}", map.capacity());
     println!("Success!");
 }

@@ -8,19 +8,19 @@ fn main() {
     // Insert a key only if it doesn't already exist
     player_stats.entry("health").or_insert(100);
 
-    assert_eq!(player_stats["health"], __);
+    assert_eq!(player_stats["health"], 100);
 
     // Insert a key using a function that provides a new value only if it
     // doesn't already exist
     player_stats.entry("health").or_insert_with(random_stat_buff);
-    assert_eq!(player_stats["health"], __);
+    assert_eq!(player_stats["health"], 100);
 
     // Ensures a value is in the entry by inserting the default if empty, and returns
     // a mutable reference to the value in the entry.
     let health = player_stats.entry("health").or_insert(50);
-    assert_eq!(health, __);
+    assert_eq!(health, &100);
     *health -= 50;
-    assert_eq!(*health, __);
+    assert_eq!(*health, 50);
 
     println!("Success!");
 }
