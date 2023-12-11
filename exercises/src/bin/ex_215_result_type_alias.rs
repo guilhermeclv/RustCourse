@@ -3,7 +3,7 @@
 use std::num::ParseIntError;
 
 // FILL in the blank
-type __;
+type Res<T> = Result<T, ParseIntError>;
 
 // Use the above alias to refer to our specific `Result` type.
 fn multiply(first_number_str: &str, second_number_str: &str) -> Res<i32> {

@@ -9,10 +9,12 @@ fn main() {
    /* 1. use a similar type which `impl From<char>`, maybe you 
    should check the docs mentioned above to find the answer */
    // 2. a keyword from the last chapter
-   let i3: i32 = 'a'.into();
+   let i3: i32 = 'a' as i32;
+   let i4: u32 = 'a'.into();
 
    // FIX the error in two ways
-   let s: String = 'a' as String;
+   let s: String = 'a'.into();
+   let s2: String = String::from('a');
 
    println!("Success!");
 }

@@ -3,7 +3,7 @@ use std::num::ParseIntError;
 
 // FILL in the blank in two ways: map, and then
 fn add_two(n_str: &str) -> Result<i32, ParseIntError> {
-   n_str.parse::<i32>().__
+   n_str.parse::<i32>().and_then(|n| Ok(n + 2))
 }
 
 fn main() {

@@ -3,12 +3,12 @@
 fn main() {
     let decimal = 97.123_f32;
 
-    let integer: _ = decimal as u8;
+    let integer: u8 = decimal as u8;
 
-    let c1: char = decimal as char;
-    let c2 = integer as char;
-
-    assert_eq!(integer, 'b' as u8);
+    let c1: char = decimal as u8 as char;
+    let c2 = (integer+1) as char;
+    println!("c1 = {}, c2 = {}", c1, c2);
+    assert_eq!((integer+1), 'b' as u8);
 
     println!("Success!");
 }

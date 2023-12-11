@@ -6,7 +6,7 @@
 // The following example shows such a scenario:
 use std::num::ParseIntError;
 
-fn main() -> Result<(), ParseIntError> {
+fn main() -> Result<(), ParseIntError> { //main can return a result type
     let number_str = "10";
     let number = match number_str.parse::<i32>() {
         Ok(number)  => number,

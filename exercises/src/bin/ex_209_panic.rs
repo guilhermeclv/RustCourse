@@ -7,6 +7,7 @@
 // ## FILL in the blank to display the whole call stack
 // ## Tips: you can find the clue in the default panic info 
 // $ __ cargo run
+
 // thread 'main' panicked at 'assertion failed: `(left == right)`
 //   left: `[97, 98, 99]`,
 //  right: `[96, 97, 98]`', src/main.rs:3:5
@@ -30,3 +31,7 @@
 // If in your project you need to make the resulting binary as small as possible, you can switch from unwinding to aborting by adding below content to Cargo.toml:
 // [profile.release]
 // panic = 'abort'
+
+fn main() {
+    println!("Hello, world!");
+}

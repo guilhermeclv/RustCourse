@@ -6,14 +6,18 @@ struct Point {
 }
 
 impl fmt::Display for Point {
-    // IMPLEMENT fmt method
+    // IMPLEMENT `fmt::Display` FOR `Point`
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "The point is ({}, {})", self.x, self.y)?;
+        Ok(())
+    }
 }
 
 fn main() {
     let origin = Point { x: 0, y: 0 };
     // FILL in the blanks
-    assert_eq!(origin.__, "The point is (0, 0)");
-    assert_eq!(format!(__), "The point is (0, 0)");
+    assert_eq!(origin.to_string(), "The point is (0, 0)");
+    assert_eq!(format!("{}",origin), "The point is (0, 0)");
 
     println!("Success!");
 }

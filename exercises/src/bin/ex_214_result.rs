@@ -19,7 +19,18 @@ fn multiply(n1_str: &str, n2_str: &str) -> Result<i32, ParseIntError> {
 // Rewriting `multiply` to make it succinct
 // You should use BOTH of  `and_then` and `map` here.
 fn multiply1(n1_str: &str, n2_str: &str) -> Result<i32, ParseIntError> {
-    // IMPLEMENT...
+    n1_str.parse::<i32>().and_then(|n1| {
+        n2_str.parse::<i32>().map(|n2| n1 * n2)
+    })
+}
+
+fn multiply2(n1_str: &str, n2_str: &str) -> Result<i32, ParseIntError> {
+    // beutiful
+    match (n1_str.parse::<i32>(), n2_str.parse::<i32>()) {
+        (Ok(n1), Ok(n2)) => Ok(n1 * n2),
+        (Err(e), _)      => Err(e),
+        (_, Err(e))      => Err(e),
+    }
 }
 
 fn print(result: Result<i32, ParseIntError>) {

@@ -24,7 +24,7 @@ impl FromStr for Point {
 fn main() {
     // FILL in the blanks in two ways
     // DON'T change code anywhere else 
-    let p = __;
+    let p = Point::from_str("(3,4)");
     assert_eq!(p.unwrap(), Point{ x: 3, y: 4} );
 
     println!("Success!");

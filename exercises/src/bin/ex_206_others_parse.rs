@@ -1,4 +1,4 @@
-// example
+// example to show how to use transmute
 fn main() {
     /*Turning raw bytes(&[u8]) to u32, f64, etc.: */
     let raw_bytes = [0x78, 0x56, 0x34, 0x12];
