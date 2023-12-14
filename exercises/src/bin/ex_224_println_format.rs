@@ -3,7 +3,7 @@ fn main() {
     Hello world, I am 
     Sunface!
     */
-    __("hello world, ");
-    __("I am");
-    __("Sunface!");
+    print!("hello world, ");
+    println!("I am");
+    println!("Sunface!");
  }

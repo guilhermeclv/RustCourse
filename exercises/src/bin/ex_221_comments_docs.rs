@@ -1,6 +1,9 @@
 // in src/compute.rs
 
-/// # Panics
+/// # Another Topic
+///
+/// blablba
+/// ## Panics
 ///
 /// The function panics if the second argument is zero.
 ///
@@ -14,4 +17,11 @@ pub fn div(a: i32, b: i32) -> i32 {
     }
 
     a / b
+}
+
+fn main(){
+    let arg = 5;
+    let answer = div(arg, 2);
+
+    assert_eq!(2, answer);
 }

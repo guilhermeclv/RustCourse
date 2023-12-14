@@ -11,3 +11,11 @@ assert_eq!(7, answer);
 pub fn add_two(x: i32) -> i32 {
     x + 2
 }
+
+fn main() {
+    let arg = 5;
+    let answer = add_two(arg);
+
+    assert_eq!(7, answer);
+    print!("{} + 2 = {}", arg, answer)
+}

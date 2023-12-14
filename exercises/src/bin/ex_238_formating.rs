@@ -19,7 +19,7 @@ fn main() {
     jack: 60.3
     */
     for (name, score) in scores {
-        println!("{name}: __");
+        println!("{name}: {score:.1}");
     }
 }
 

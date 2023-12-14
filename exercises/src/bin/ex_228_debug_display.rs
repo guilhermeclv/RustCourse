@@ -1,5 +1,5 @@
 /* Make it work*/
-use std::fmt;
+use std::fmt::{self, write};
 
 struct Point2D {
     x: f64,
@@ -7,11 +7,15 @@ struct Point2D {
 }
 
 impl fmt::Display for Point2D {
-    /* Implement.. */
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Display: {} + {}i", self.x, self.y)
+    }
 }
 
 impl fmt::Debug for Point2D {
-    /* Implement.. */
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Debug: Complex {{ real: {}, imag: {} }}", self.x, self.y)
+    }
 }
 
 fn main() {

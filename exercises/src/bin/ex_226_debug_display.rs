@@ -13,5 +13,12 @@ fn main() {
         age: 18,
     }
     */
-    println!("{:?}", person);
+    println!("Person {{\n    name: \"{}\",\n    age: {},\n}}", person.name, person.age);
+    
+    println!(r#"Person {{    
+        name: "{}",
+        age: {},
+    }}"#, person.name, person.age);
+
+    println!("{:#?}", person)
 }

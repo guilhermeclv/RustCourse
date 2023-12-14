@@ -1,9 +1,12 @@
 
 fn main() {
-    assert_eq!(format!("__", 27), "0b11011");
-    assert_eq!(format!("__", 27), "0o33");
-    assert_eq!(format!("__", 27), "0x1b");
-    assert_eq!(format!("__", 27), "0x1B");
+    println!("{:.2}", 273.to_string()); // truncate number to 2 digits => 27
+    println!("{:.2}", 273); // not working, 273 is not a string
+
+    assert_eq!(format!("{:#b}", 27), "0b11011");
+    assert_eq!(format!("{:#o}", 27), "0o33");
+    assert_eq!(format!("{:#x}", 27), "0x1b");
+    assert_eq!(format!("{:#X}", 27), "0x1B");
 
     println!("{:x}!", 27); // Hex with no prefix => 1b
 

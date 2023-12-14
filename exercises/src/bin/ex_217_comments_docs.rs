@@ -1,4 +1,4 @@
-// exemple
+// exemple comments
 fn main() {
     // This is an example of a line comment
     // There are two slashes at the beginning of the line

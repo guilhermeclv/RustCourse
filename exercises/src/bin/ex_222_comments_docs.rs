@@ -1,4 +1,4 @@
-// in src/compute.rs
+// example to hide lines in documentation
 
 /// ```
 /// # fn try_main() -> Result<(), String> {
@@ -16,4 +16,11 @@ pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
     } else {
         Ok(a / b)
     }
+}
+
+fn main() {
+    let arg = 5;
+    let answer = try_div(arg, 2);
+
+    assert_eq!(Ok(2), answer);
 }
