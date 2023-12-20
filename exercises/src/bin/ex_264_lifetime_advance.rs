@@ -17,8 +17,8 @@ fn main() {
     let r = &mut p;
     // Here comes the reborrow
     let rr: &Point = &*r;
-
-    println!("{:?}", rr); // Reborrow ends here, NLL introduced
+    //r.move_to(2, 10); not allowed anymore, NLL introduced
+    println!("rr:{:?}, r:{:?}", rr,r); // Reborrow ends here, NLL introduced
 
     // Reborrow is over, we can continue using `r` now
     r.move_to(10, 10);

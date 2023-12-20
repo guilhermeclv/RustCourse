@@ -15,7 +15,7 @@ fn add_one<'a>(x: &'a mut i32) {
 // in more complex cases, different lifetimes may be required.
 fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("`print_multi`: x is {}, y is {}", x, y);
-}
+} 
 
 // Returning references that have been passed in is acceptable.
 // However, the correct lifetime must be returned.

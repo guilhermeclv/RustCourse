@@ -1,6 +1,8 @@
 /* Make it work */
 
-#[derive(Debug)]
+use std::clone;
+
+#[derive(Debug,Clone)]
 struct NoCopyType {}
 
 #[derive(Debug)]
@@ -14,10 +16,10 @@ fn main()
   /* 'a tied to fn-main stackframe */
   let var_a = 35;
   let example: Example;
-  
+  let var_b: NoCopyType;
   {
     /* Lifetime 'b tied to new stackframe/scope */ 
-    let var_b = NoCopyType {};
+    var_b = NoCopyType {};
     
     /* fixme */
     example = Example { a: &var_a, b: &var_b };

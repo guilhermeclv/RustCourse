@@ -17,6 +17,7 @@ fn main() {
         let coerced_static = coerce_static(&lifetime_num);
 
         println!("coerced_static: {}", coerced_static);
+        println!("NUM: {} stays accessible!", NUM);
     }
 
     println!("NUM: {} stays accessible!", NUM);

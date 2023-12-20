@@ -13,7 +13,7 @@ fn main() {
         //                                                │
         println!("borrow1: {}", borrow1); //              │
     } // `borrow1 ends. ──────────────────────────────────┘
-    {                                                    
+    {   // brackets added to show explicit lifetimes                                                  
         let borrow2 = &i; 
                                                         
         println!("borrow2: {}", borrow2);               

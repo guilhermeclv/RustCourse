@@ -2,15 +2,16 @@ use std::fmt::Display;
 
 fn main() {
   let mut string = "First".to_owned();
+  const STRING: &str = "Second";
 
   string.push_str(string.to_uppercase().as_str());
   print_a(&string);
   print_b(&string);
-  print_c(&string); // Compilation error
-  print_d(&string); // Compilation error
+  print_c(&STRING); // Compilation error
+  print_d(&STRING); // Compilation error
   print_e(&string);
   print_f(&string);
-  print_g(&string); // Compilation error
+  //print_g(&string); // Compilation error
 }
 
 fn print_a<T: Display + 'static>(t: &T) {

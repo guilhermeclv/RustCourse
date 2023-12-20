@@ -16,7 +16,7 @@ fn print_it2<T: Debug + 'static>( input: &T) {
 
 fn main() {
     // i is owned and contains no references, thus it's 'static:
-    let i = 5;
+    const i:i32 = 5; // const never goes out of scope ( REMEMBER: const is not a variable, it's a constant)
     print_it(i);
 
     // oops, &i only has the lifetime defined by the scope of

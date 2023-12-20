@@ -1,6 +1,7 @@
 /* Fill in the blank in two ways */
 fn main() {
-    __;
+    let v = "hello";
+    //const v: &str = "hello";
     need_static(v);
 
     println!("Success!")

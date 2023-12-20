@@ -1,12 +1,18 @@
 /* Make it work by adding proper lifetime annotations */
-struct ImportantExcerpt {
-    part: &str,
+#[derive(Debug)]
+struct ImportantExcerpt <'t> {
+    part: &'t str,
 }
 
-impl ImportantExcerpt {
-    fn level(&'a self) -> i32 {
+impl <'a> ImportantExcerpt <'a>{
+    fn level (&'a self) -> i32 {
         3
     }
 }
 
-fn main() {}
+fn main() {
+    let test_1 = "test_1";
+    let my_struc = ImportantExcerpt { part: test_1 };
+    println!("my_struc: {:?}", my_struc);
+    println!("my_struc.level(): {:?}", my_struc.level());
+}

@@ -1,9 +1,16 @@
 /* Make it work */
-struct Interface<'a> {
-    manager: &'a mut Manager<'a>
+// struct Interface<'a> {
+//     manager: &'a mut Manager<'a>
+// }
+struct Interface<'b, 'a: 'b> {
+    manager: &'b mut Manager<'a>
 }
-
-impl<'a> Interface<'a> {
+// impl<'a> Interface<'a> {
+//     pub fn noop(self) {
+//         println!("interface consumed");
+//     }
+// }
+impl<'b, 'a: 'b> Interface<'b, 'a> {
     pub fn noop(self) {
         println!("interface consumed");
     }
@@ -18,7 +25,13 @@ struct List<'a> {
 }
 
 impl<'a> List<'a> {
-    pub fn get_interface(&'a mut self) -> Interface {
+    // pub fn get_interface(&'a mut self) -> Interface {
+    //     Interface {
+    //         manager: &mut self.manager
+    //     }
+    //}
+    pub fn get_interface<'b>(&'b mut self) -> Interface<'b, 'a>
+    where 'a: 'b {
         Interface {
             manager: &mut self.manager
         }

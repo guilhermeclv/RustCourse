@@ -1,6 +1,6 @@
 //example
 struct Owner(i32);
-
+// is possible to lifetime annotate in a function like we can use in struct
 impl Owner {
     // Annotate lifetimes as in a standalone function.
     fn add_one<'a>(&'a mut self) { self.0 += 1; }

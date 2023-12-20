@@ -8,13 +8,16 @@ fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {
 /* Make it work */
 // A function which takes no arguments, but has a lifetime parameter `'a`.
 fn failed_borrow<'a>() {
-    let _x = 12;
-
-    // ERROR: `_x` does not live long enough
-    let y: &'a i32 = &_x;
+    // // ERROR: `_x` does not live long enough
+    // let _x: i32 = 12;    
+    // let y: &'a i32 = &_x;
     // Attempting to use the lifetime `'a` as an explicit type annotation 
     // inside the function will fail because the lifetime of `&_x` is shorter
     // than `'a` . A short lifetime cannot be coerced into a longer one.
+
+    let _x = 12;
+    let y: &i32 = &_x;
+    
 }
 
 fn main() {
