@@ -8,7 +8,8 @@ fn main() {
 
     let v1: Vec<i32> = vec![1, 2, 3];
 
-    let v2 = v1.iter().collect();
+    let v2:Vec<i32> = v1.into_iter().collect();
+    //let v2:Vec<i32> = v1.iter().map(|x| *x).collect();
 
     assert_eq!(v2, vec![1, 2, 3]);
 }

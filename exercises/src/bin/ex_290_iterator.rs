@@ -1,16 +1,16 @@
 //example
 struct Counter {
-    count: u32,
+    count: i32,
 }
 
 impl Counter {
-    fn new() -> Counter {
-        Counter { count: 0 }
+    fn new(initial_value:i32) -> Counter {
+        Counter { count: initial_value }
     }
 }
 
-impl Iterator for Counter {
-    type Item = u32;
+impl Iterator for Counter { // trait Iterator is defined in the standard library
+    type Item = i32;
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.count < 5 {
@@ -23,7 +23,7 @@ impl Iterator for Counter {
 }
 
 fn main() {
-    let mut counter = Counter::new();
+    let mut counter = Counter::new(0);
 
     assert_eq!(counter.next(), Some(1));
     assert_eq!(counter.next(), Some(2));
@@ -31,4 +31,8 @@ fn main() {
     assert_eq!(counter.next(), Some(4));
     assert_eq!(counter.next(), Some(5));
     assert_eq!(counter.next(), None);
+
+    for i in Counter::new(-5) {
+        println!("{}", i);
+    }
 }

@@ -1,5 +1,7 @@
 /* Implement `call_me` to make it work */
-fn call_me {
+fn call_me <T>(f: T) 
+where T: Fn()->()
+{
     f();
 }
 

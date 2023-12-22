@@ -10,7 +10,13 @@ impl Iterator for Fibonacci {
     type Item = u32;
     
     /* Implement next method */
-    fn next(&mut self)
+    fn next(&mut self) -> Option<u32>{
+        let new_next = self.curr + self.next;
+        self.curr = self.next;
+        self.next = new_next;
+        Some(self.curr)
+    
+    }
 }
 
 // Returns a Fibonacci sequence generator

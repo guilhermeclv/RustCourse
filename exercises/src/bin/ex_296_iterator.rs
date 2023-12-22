@@ -6,7 +6,7 @@ struct Shoe {
 }
 
 fn shoes_in_size(shoes: Vec<Shoe>, shoe_size: u32) -> Vec<Shoe> {
-    shoes.into_iter().__.collect()
+    shoes.into_iter().filter(|shoe| shoe.size == shoe_size ).collect()
 }
 
 fn main() {

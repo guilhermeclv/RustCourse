@@ -5,7 +5,15 @@ fn main() {
 
     let consume = || {
         println!("`movable`: {:?}", movable);
-        take(movable);
+        take(movable.clone());
+    };
+
+    consume();
+    consume();
+
+    let consume  = || {
+        println!("`movable`: {:?}", movable);
+        take(&movable);
     };
 
     consume();

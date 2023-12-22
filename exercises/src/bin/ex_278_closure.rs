@@ -4,9 +4,9 @@ fn main() {
 
     let update_string = |str| -> String {s.push_str(str); s };
 
-    exec(update_string);
+    let new_string = exec(update_string);
 }
 
-fn exec<'a, F: __>(mut f: F) {
-    f("hello");
+fn exec<'a, F:FnOnce(&'a str)->String>(mut f: F)->String {
+    f("hello")
 }

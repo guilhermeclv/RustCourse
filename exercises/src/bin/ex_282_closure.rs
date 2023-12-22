@@ -1,7 +1,7 @@
 //example
 
 struct Cacher<T,E>
-where
+where // T is a closure
     T: Fn(E) -> E,
     E: Copy
 {

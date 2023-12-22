@@ -4,7 +4,7 @@
 // <F> denotes that F is a "Generic type parameter"
 fn apply<F>(f: F) where
     // The closure takes no input and returns nothing.
-    F: __ {
+    F: FnOnce() {
 
     f();
 }

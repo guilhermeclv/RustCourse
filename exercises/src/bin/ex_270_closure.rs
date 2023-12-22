@@ -5,7 +5,7 @@
 fn main() {
     let mut count = 0;
 
-    let mut inc = || {
+    let mut inc =  move || {
         count += 1;
         println!("`count`: {}", count);
     };
@@ -21,5 +21,6 @@ fn main() {
     // possible to reborrow without an error
     let _count_reborrowed = &mut count; 
 
-    assert_eq!(count, 0);
+    assert_eq!(count, 0); // its 0 because the var is moved to closure and i32 is copy to closure
+    println!("`count`: {}", count)
 }
