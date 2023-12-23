@@ -23,7 +23,7 @@ fn main(){
 
     //let generic_name_2:u8 = -4 // REBEMBER this line will generate a error because the vars is unsigned and can't store negative numbers
     // in rust we can store using signed vars with 8,16,32,64,128 bits (1,2,4,8,16 bytes)
-    let my_unsigned_8bits:u8 = 3; // unsigned 8bits (1byte) minimum value is (00000000)=0 and maximum value is (11111111)=255
+    let _my_unsigned_8bits:u8 = 3; // unsigned 8bits (1byte) minimum value is (00000000)=0 and maximum value is (11111111)=255
     let my_unsigned_16bits:u16 = 3; // unsigned 16bits (2bytes) minimum value is (0000000000000000)=0 and maximum value is (1111111111111111)=65535
     let my_unsigned_32bits:u32 = 3; // unsigned 32bits (4bytes) minimum value is 0 and maximum value is 4294967295
     let my_unsigned_64bits:u64 = 3; // unsigned 64bits (8bytes) minimum value is 0 and maximum value is 18446744073709551615
