@@ -1,6 +1,11 @@
 /* Make it workd */
 struct Meters(u32);
 
+impl Meters {
+    fn pow(&self, exp:u32)->u32 {
+        (*self).0.pow(exp)
+     }
+}
 fn main() {
     let i: u32 = 2;
     assert_eq!(i.pow(2), 4);

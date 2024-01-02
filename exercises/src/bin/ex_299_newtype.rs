@@ -25,5 +25,5 @@ fn main() {
     let age = Years(5);
     let age_days = age.to_days();
     println!("Old enough {}", old_enough(&age));
-    println!("Old enough {}", old_enough(&age_days));
+    println!("Old enough {}", old_enough(&age_days.to_years()));
 }

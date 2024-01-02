@@ -1,7 +1,7 @@
 use std::fmt;
 
 /* Define the Wrapper type */
-__;
+struct Wrapper(Vec<String>);
 
 // Display is an external trait
 impl fmt::Display for Wrapper {

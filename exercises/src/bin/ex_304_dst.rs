@@ -1,9 +1,9 @@
 /* Make it work with const generics */
-fn my_function(n: usize) -> [u32; usize] {
-    [123; n]
+fn my_function<const N: usize>() -> [u32; N] {
+    [123; N]
 }
 
 fn main() {
-    let arr = my_function();
-    println!("{:?}",arr);
+    let arr = my_function::<5>();
+    println!("{:?}", arr);
 }

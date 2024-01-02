@@ -1,4 +1,4 @@
-use std::ops::Add;
+use std::ops::{Add, Sub};
 use std::fmt::{self, format};
 
 struct Meters(u32);
@@ -15,10 +15,20 @@ impl Add for Meters {
         Self(self.0 + other.0)
     }
 }
+impl Sub for Meters {
+    type Output = Self;
+
+    fn sub(self, other: Meters) -> Self {
+        Self(self.0 - other.0)
+    }
+}
 fn main() {
     let d = calculate_distance(Meters(10), Meters(20));
+    println!("{:?}",d.0);
     assert_eq!(format!("{}",d), "There are still 30 meters left");
 }
 
 /* Implement calculate_distance  */
-fn calculate_distance
+fn calculate_distance (d1:Meters, d2:Meters)->Meters{
+    d2+d1
+}
