@@ -3,7 +3,7 @@ fn main() {
     let mut x: i32 = 1;
     x = 7;
     // Shadowing and re-binding
-    let x = x; 
+    let mut x = x; 
     x += 3;
 
 

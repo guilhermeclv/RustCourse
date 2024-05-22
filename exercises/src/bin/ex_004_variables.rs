@@ -1,4 +1,5 @@
 fn main() {
+    let x:&str="hello";
     println!("{}, world", x); 
 }
 
