@@ -2,11 +2,11 @@
 fn main() {
     let s = String::from("hello, world");
 
-    print_str(s);
+    print_str(&s.to_string());
 
     println!("{}", s);
 }
 
-fn print_str(s: String)  {
+fn print_str(s: &String)  {
     println!("{}",s)
 }
