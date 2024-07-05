@@ -30,3 +30,5 @@ fn main() {
     
     println!("Success!");
 }
+
+//Como eu faria para controlar / fazer um vetor usando um array que é estatico, usando mais de uma variável.

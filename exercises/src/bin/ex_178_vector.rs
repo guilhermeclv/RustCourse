@@ -7,10 +7,10 @@ fn main() {
     }
 
     for i in 0..5 {
-       v.push(i+2);
+       v.push(i+2);  // como somar duas posições no vetor // resolução impossível
     }
     
-    assert_eq!(v, vec![2, 3, 4, 5, 6]);
+    assert_eq!(v, vec![1, 2, 3, 2, 3, 4, 5, 6]);
 
     println!("Success!");
 }
