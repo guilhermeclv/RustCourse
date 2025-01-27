@@ -5,7 +5,8 @@ fn main() {
 
     y = x;
     
-    let z = 10; // Type of z ? 
+    let z = 10; // Type of z ?  //i32
 
     println!("Success!");
 }
+//Feito
