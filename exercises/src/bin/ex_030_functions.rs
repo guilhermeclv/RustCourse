@@ -8,6 +8,8 @@ fn main() {
     println!("Success!");
 }
 
-fn sum(x, y: i32) {
-    x + y;
-}
+// fn sum(x, y: i32) {
+//     x + y;
+// }
+
+//fazer
