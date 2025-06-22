@@ -5,13 +5,13 @@
 fn main() {  
     let mut s = String::from("hello, world");
  
-    let slice1: &str = __; // In two ways
+    let slice1: &str = &s; // In two ways
     assert_eq!(slice1, "hello, world");
  
-    let slice2 = __;
-    assert_eq!(slice2, "hello");
+    let slice2 = &slice1.split(", world").next().unwrap();
+    assert_eq!(slice2.to_string(), "hello");
  
-    let slice3: __ = __; 
+    let mut slice3: String = slice1.clone().to_string(); 
     slice3.push('!');
     assert_eq!(slice3, "hello, world!");
  

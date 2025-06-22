@@ -17,6 +17,8 @@ fn get_option(tp: u8) -> Option<i32> {
 }
 
 // IMPLEMENT this function in THREE ways
-fn never_return_fn() -> ! {
+fn never_return_fn()-> () {
    
 }
+
+//NÃO FEITO

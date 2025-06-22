@@ -14,4 +14,6 @@ fn main() {
    assert_eq!(s, "hello, world!");
 
    println!("Success!");
+
+// Não entendi o sentido , o que são heap? Como saber quantas estão acontecendo?
 }

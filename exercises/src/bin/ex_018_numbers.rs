@@ -4,9 +4,13 @@ fn main() {
         sum += i
     }
 
-    assert!(sum == -3);
+    assert_eq!(sum, -5);
 
     for c in 'a'..='z' {
+        if c=='c' {
         println!("{}",c);
+        break;
+        }
+        
     }
 }
