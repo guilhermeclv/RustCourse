@@ -1,9 +1,5 @@
 fn main() {
-<<<<<<< HEAD
     let x=define_x();
-=======
-    let x:&str="hello";
->>>>>>> f11c22dbc9b53d814171f827ba981efe6b89f975
     println!("{}, world", x); 
 }
 

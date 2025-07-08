@@ -1,10 +1,6 @@
 fn main() {
     let x: i32 = 10;
-<<<<<<< HEAD
     let y:i32 = 2;
-=======
-    let y: i32 = 2;
->>>>>>> f11c22dbc9b53d814171f827ba981efe6b89f975
     {
         let y: i32 = 5;
         let x:i32 = 2;
