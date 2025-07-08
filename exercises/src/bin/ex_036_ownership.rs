@@ -1,3 +1,5 @@
+use std::clone;
+
 // Don't modify code in main!
 fn main() {
     let s1 = String::from("hello, world");
@@ -7,6 +9,7 @@ fn main() {
 }
 
 // Only modify the code below!
-fn take_ownership(s: String) {
+fn take_ownership(s.clone(): &String)-> String {
     println!("{}", s);
+    s
 }

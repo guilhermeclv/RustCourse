@@ -1,6 +1,6 @@
 // Fill the blank
 fn main() {
-    let mut s = __;
+    let mut s = "".to_string();
     s.push_str("hello, world");
     s.push('!');
 
@@ -8,3 +8,5 @@ fn main() {
 
     println!("Success!");
 }
+
+//Explicar o PUSH

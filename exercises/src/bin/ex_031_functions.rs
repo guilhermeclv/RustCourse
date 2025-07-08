@@ -3,6 +3,8 @@ fn main() {
  }
  
  // Replace i32 with another type
- fn print() -> i32 {
+ fn print() -> () {
     println!("Success!");
  }
+
+ //FEITO
