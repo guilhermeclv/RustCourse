@@ -4,6 +4,6 @@ fn main() {
 
     println!("Success!");
 
-    //CONTINUAR DAQUI, PAI TÁ ON!!! ATÉ 24
+
 }
 //Feito
